@@ -1,0 +1,67 @@
+
+
+body {
+    background-image: url(/assets/bg-weather.png);
+    background-position: center center;
+    /* определяет размер изображения на странице */
+    background-size: cover;
+    /* свойство устанавливает, будет ли повторяться изображение и каким образом */
+    background-repeat: no-repeat;
+    /* cвойство определяет, будет ли фоновое изображение прокручиваться 
+    вместе с остальной частью страницы или будет фиксированным */
+    background-attachment: fixed;
+}
+
+.Color-White {
+    color: white;
+  
+}
+
+.GradeNow {
+    padding-bottom: 100px; /* по размеру инпута */
+    margin-bottom: 0px;
+    padding-left: 100px;
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    margin-top: 0px;
+    align-items: center
+
+}
+
+
+.fs143 {
+    font-size: 143px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.fs60 {
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.City {
+    display: flex;
+    justify-content: center;  /* Выравнивание по горизонтали */
+    align-items: center;      /* Выравнивание по вертикали */
+    flex-direction: column; /* Город и время одно под другим */
+
+
+}
+
+.Clock {
+    font-size: 20px;
+    margin-top: 5px; /* Отступ между городом и временем */
+}
+
+.Cloudy {
+    background-image: url(/assets/Cloudy.png);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;      /* Выравнивание по вертикали */
+    vertical-align: middle;
+}
