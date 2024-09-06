@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Clock from './Clock';
 
-export default function GradeNow() {
+export default function GradeNow({ city }) {
   const [grade, setGrade] = useState([]);
-  const [city, setCity] = useState();
+  const [timezone,setTimezone] = useState();
+
   useEffect(() => {
     const fetchGrade = async () => {
       try {
-        const response = await fetch('http://localhost:3000/weather/Almaty');
+        const response = await fetch(`http://localhost:3000/weather/${city}`);
         if (response.ok) {
           const data = await response.json();
           setGrade(data.main.temp);
-          setCity(data.name)
+          setTimezone(data.timezone)
         } else {
           console.error('Ошибка при загрузке списка API');
         }
@@ -21,14 +22,14 @@ export default function GradeNow() {
     };
 
     fetchGrade();
-  }, []);
+  });
 
   return (
     <div className="GradeNow">
         <h1 className='Color-White fs143'>{Math.round(grade - 273.15)}°</h1>
         <div className="City">
           <h1 className='Color-White fs60'>{city}</h1>
-          <Clock />
+          <Clock timezone={timezone} />
         </div>   
         <div className='Cloudy'></div>
     </div>
